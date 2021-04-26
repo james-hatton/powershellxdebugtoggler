@@ -1,4 +1,4 @@
-Set-ExecutionPolicy -ExecutionPolicy ByPass
+
 
 if (Get-Module -ListAvailable -Name BurntToast) {
     Write-Host "Already installed"
