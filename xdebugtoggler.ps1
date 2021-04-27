@@ -48,12 +48,12 @@ Else
 
 $xdebug = [ordered] @{
    zend_extension = "C:\laragon\bin\php\php-7.2.19-Win32-VC15-x64\ext\php_xdebug-3.0.4-7.2-vc15-x86_64.dll"
-xdebug.var_display_max_depth=10
-xdebug.var_display_max_children=256
-xdebug.var_display_max_data=1024
-xdebug.mode="debug"
-xdebug.start_with_request="yes"
-xdebug.remote_autostart = 1
+'xdebug.var_display_max_depth'=10
+'xdebug.var_display_max_children'=256
+'xdebug.var_display_max_data'=1024
+'xdebug.mode'="debug"
+'xdebug.start_with_request'="yes"
+'xdebug.remote_autostart' = 1
   }
   $iniContent["xdebug"] = $xdebug
    
