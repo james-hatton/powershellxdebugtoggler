@@ -30,7 +30,6 @@ else {
 
 Import-Module BurntToast
 
-
 $iniContent = Get-IniContent "C:\laragon\bin\php\php-7.2.19-Win32-VC15-x64\php.ini"
 
 
@@ -61,6 +60,11 @@ replacemeremote_autostart = 1
 
 }
 
-$iniContent | Out-IniFile -Force "C:\laragon\bin\php\php-7.2.19-Win32-VC15-x64\php.ini"
+$temp = "";
+
+
+$iniContent | Out-IniFile -Force  | $temp
+
+$temp | Set-Content "C:\laragon\bin\php\php-7.2.19-Win32-VC15-x64\php.ini"
 
 C:\laragon\laragon.exe reload apache
