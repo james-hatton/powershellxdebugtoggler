@@ -1,5 +1,4 @@
 
-
 if (Get-Module -ListAvailable -Name BurntToast) {
     Write-Host "Already installed"
 } 
@@ -60,11 +59,11 @@ replacemeremote_autostart = 1
 
 }
 
-$temp = "";
+
+$iniContent | Out-IniFile -Force  "C:\laragon\bin\php\php-7.2.19-Win32-VC15-x64\php.ini"
 
 
-$iniContent | Out-IniFile -Force  $temp
+(Get-Content "C:\laragon\bin\php\php-7.2.19-Win32-VC15-x64\php.ini").replace('replaceme', 'xdebug.') | Set-Content "C:\laragon\bin\php\php-7.2.19-Win32-VC15-x64\php.ini"
 
-$temp | Set-Content "C:\laragon\bin\php\php-7.2.19-Win32-VC15-x64\php.ini"
 
 C:\laragon\laragon.exe reload apache
