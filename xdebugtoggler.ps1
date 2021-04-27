@@ -63,7 +63,7 @@ replacemeremote_autostart = 1
 $temp = "";
 
 
-$iniContent | Out-IniFile -Force  | $temp
+$iniContent | Out-IniFile -Force  $temp
 
 $temp | Set-Content "C:\laragon\bin\php\php-7.2.19-Win32-VC15-x64\php.ini"
 
