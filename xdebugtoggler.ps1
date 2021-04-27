@@ -38,7 +38,6 @@ $isXDebugOn = $iniContent.Contains("xdebug")
 If ($isXdebugOn)
 {
  $iniContent.Remove("xdebug")
- New-BurntToastNotification -Text "Xdebug disabled","Xdebug disabled"
 } 
 Else
 {
@@ -54,9 +53,7 @@ replacemestart_with_request="yes"
 replacemeremote_autostart = 1
   }
   $iniContent["xdebug"] = $xdebug
-   
-   New-BurntToastNotification -Text "Xdebug enabled","Xdebug enabled"
-
+ 
 }
 
 
@@ -65,5 +62,14 @@ $iniContent | Out-IniFile -Force  "C:\laragon\bin\php\php-7.2.19-Win32-VC15-x64\
 
 (Get-Content "C:\laragon\bin\php\php-7.2.19-Win32-VC15-x64\php.ini").replace('replaceme', 'xdebug.') | Set-Content "C:\laragon\bin\php\php-7.2.19-Win32-VC15-x64\php.ini"
 
+
+If ($isXdebugOn)
+{
+ New-BurntToastNotification -Text "Xdebug disabled","Xdebug disabled"
+}
+Else
+{
+  New-BurntToastNotification -Text "Xdebug enabled","Xdebug enabled"
+}
 
 C:\laragon\laragon.exe reload apache
