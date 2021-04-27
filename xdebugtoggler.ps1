@@ -53,6 +53,7 @@ var_display_max_children=256
 var_display_max_data=1024
 mode="debug"
 start_with_request="yes"
+remote_autostart = 1
   }
   $iniContent["xdebug"] = $xdebug
    
